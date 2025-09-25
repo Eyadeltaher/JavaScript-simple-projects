@@ -16,9 +16,12 @@ These projects are not meant to be advanced applications, but **hands-on practic
 
 ---
 
-## 📂 Projects
+## 🌐 Live Demo
 
-All projects are located in the [`projects/`](./projects) folder:
+You can explore all the projects directly from this hub page:  
+👉 [JavaScript Simple Projects](https://EyadEltaher.github.io/JavaScript-simple-projects/)
+
+This page lists all projects with descriptions and links:
 
 1. **Calculator**  
    A simple calculator to practice user input, operators, and DOM updates.
@@ -83,5 +86,6 @@ Feel free to reach out if you’re interested in collaboration or have suggestio
 ## 📜 License
 
 This repository is licensed under the [MIT License](./LICENSE).
+
 
 
