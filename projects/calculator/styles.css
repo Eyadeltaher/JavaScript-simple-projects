@@ -1,0 +1,91 @@
+/* Reset some defaults */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0e7ef 0%, #f8fafc 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Calculator container */
+#calculator {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(60, 60, 120, 0.12);
+    padding: 2.5em 2em 2em 2em;
+    max-width: 320px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Display field */
+#display {
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: 1.5em;
+    border: none;
+    border-radius: 10px;
+    background: rgba(240, 240, 255, 0.7);
+    box-shadow: 0 2px 8px rgba(60, 60, 120, 0.07);
+    font-size: 1.6em;
+    color: #222;
+    text-align: right;
+    padding: 0 0.8em;
+    letter-spacing: 1px;
+    outline: none;
+    transition: background 0.2s;
+}
+
+/* Keypad grid */
+.keys {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7em;
+}
+
+/* Calculator buttons */
+.keys button {
+    background: rgba(255,255,255,0.85);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(60, 60, 120, 0.06);
+    font-size: 1.2em;
+    color: #333;
+    padding: 0.7em 0;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s;
+}
+
+.keys button:hover {
+    background: #e0e7ef;
+    box-shadow: 0 4px 16px rgba(60, 60, 120, 0.10);
+}
+
+.keys button:active {
+    background: #c7d2fe;
+}
+
+.keys button:nth-child(4),
+.keys button:nth-child(8),
+.keys button:nth-child(12),
+.keys button:nth-child(16) {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.keys button:nth-child(14) {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.keys button:nth-child(15) {
+    color: #059669;
+    font-weight: 600;
+}

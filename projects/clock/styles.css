@@ -1,0 +1,53 @@
+/* Hacker-style digital clock */
+
+body {
+    background: #101010;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+}
+
+.clock-container {
+    background: rgba(20, 30, 20, 0.85);
+    border: 2px solid #00ff41;
+    border-radius: 18px;
+    box-shadow: 0 0 32px #00ff41a0, 0 0 8px #00ff4160 inset;
+    padding: 2.5em 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.digital-clock {
+    color: #00ff41;
+    font-size: 3.5em;
+    letter-spacing: 0.12em;
+    text-shadow:
+        0 0 8px #00ff41,
+        0 0 20px #00ff4180,
+        0 0 2px #00ff41;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    margin-bottom: 0.5em;
+    user-select: none;
+}
+
+.clock-label {
+    color: #00ff41cc;
+    font-size: 1.1em;
+    letter-spacing: 0.08em;
+    margin-bottom: 1em;
+    text-shadow: 0 0 4px #00ff4180;
+    font-family: inherit;
+}
+
+@media (max-width: 600px) {
+    .clock-container {
+        padding: 1.2em 0.5em;
+    }
+    .digital-clock {
+        font-size: 2em;
+    }
+}
