@@ -38,6 +38,9 @@ This page lists all projects with descriptions and links:
 5. **Recipe App**  
    Fetches recipes from an external API to practice **JSON**, **fetch API**, and **asynchronous JavaScript**.
 
+6. **Coordinate Systems Converter**  
+   Converts between Cartesian, Cylindrical, and Spherical coordinate systems using mathematical conversions in JavaScript
+
 ---
 
 ## 🚀 How to Run
@@ -86,6 +89,7 @@ Feel free to reach out if you’re interested in collaboration or have suggestio
 ## 📜 License
 
 This repository is licensed under the [MIT License](./LICENSE).
+
 
 
 
