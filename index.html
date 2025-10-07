@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="A collection of small vanilla JavaScript projects by Eyad Eltaher — from calculator and clock to coordinate system converter.">
   <title>JavaScript Simple Projects</title>
+
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
   <style>
-    
     body {
-      font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+      font-family: Inter, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
       background: #242540;
       color: #e6e7ee;
@@ -20,7 +22,7 @@
       padding: 2rem;
       text-align: center;
       background: linear-gradient(90deg, #2d2f5a, #202134);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
     }
 
     header h1 {
@@ -28,6 +30,12 @@
       font-size: 2rem;
       letter-spacing: 1px;
     }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #cfd1f6;
+    }
+
 
     .container {
       max-width: 900px;
@@ -41,32 +49,48 @@
       gap: 1rem;
     }
 
+
     .card {
-      background: #2b2d50;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-      transition: all 0.25s ease;
+      background-color: #2b2d50;
+      color: white;
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      cursor: pointer;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    .card:hover,
+    .card.touch-hover {
+      transform: translateY(-6px);
+      background-color: #2e3058;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
 
-    h3 {
+    .card h3 {
       margin-top: 0;
     }
 
-    a {
-      color: inherit;
+    .card h3 a {
       text-decoration: none;
-      transition: color 0.2s ease;
+      color: #9fc7ff;
+      transition: color 0.2s ease, text-shadow 0.25s ease;
     }
 
-    a:hover {
-      color: #8ab4f8;
+    .card h3 a:hover {
+      color: #c9e2ff;
+      text-shadow: 0 0 8px rgba(159, 199, 255, 0.5);
     }
+
+
+    code {
+      background: #1d1e33;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #b3c0ff;
+      font-size: 0.95em;
+    }
+
 
     section h2 {
       margin-top: 0;
@@ -77,13 +101,6 @@
       padding-left: 1.2rem;
     }
 
-    code {
-      background: #1d1e33;
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #b3c0ff;
-      font-size: 0.95em;
-    }
 
     footer {
       margin: 3rem 0;
@@ -92,9 +109,11 @@
       font-size: 0.9rem;
     }
 
-    .meta {
-      font-size: .9rem;
-      color: #cfd1f6;
+
+    @media (prefers-reduced-motion: reduce) {
+      .card {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -106,12 +125,35 @@
 
   <main class="container">
     <section class="grid">
-      <article class="card"><h3><a href="projects/calculator/index.html">Calculator</a></h3><p>Basic arithmetic, input validation, and UI updates.</p></article>
-      <article class="card"><h3><a href="projects/clock/index.html">Clock</a></h3><p>Live clock using Date + setInterval.</p></article>
-      <article class="card"><h3><a href="projects/stopwatch/index.html">Stopwatch</a></h3><p>Start / stop / lap logic with timers.</p></article>
-      <article class="card"><h3><a href="projects/rock-paper-scissors/index.html">Rock Paper Scissors</a></h3><p>Game logic, random choice, DOM updates.</p></article>
-      <article class="card"><h3><a href="projects/recipe-app/index.html">Recipe App</a></h3><p>Fetch API and async/await to display data from an external API.</p></article>
-      <article class="card"><h3><a href="projects/coordinate-systems-converter/index.html">Coordinate Systems Converter</a></h3><p>Convert between Cartesian, Cylindrical, and Spherical coordinates with real-time validation and formulas.</p></article>
+      <article class="card">
+        <h3><a href="projects/calculator/index.html">Calculator</a></h3>
+        <p>Basic arithmetic, input validation, and UI updates.</p>
+      </article>
+
+      <article class="card">
+        <h3><a href="projects/clock/index.html">Clock</a></h3>
+        <p>Live clock using <code>Date</code> and <code>setInterval()</code>.</p>
+      </article>
+
+      <article class="card">
+        <h3><a href="projects/stopwatch/index.html">Stopwatch</a></h3>
+        <p>Start / stop / lap logic with timers.</p>
+      </article>
+
+      <article class="card">
+        <h3><a href="projects/rock-paper-scissors/index.html">Rock Paper Scissors</a></h3>
+        <p>Game logic, random choice, DOM updates.</p>
+      </article>
+
+      <article class="card">
+        <h3><a href="projects/recipe-app/index.html">Recipe App</a></h3>
+        <p>Uses Fetch API and async/await to get recipes from an external API.</p>
+      </article>
+
+      <article class="card">
+        <h3><a href="projects/coordinate-systems-converter/index.html">Coordinate Systems Converter</a></h3>
+        <p>Convert between Cartesian, Cylindrical, and Spherical coordinates with real-time validation and formulas.</p>
+      </article>
     </section>
 
     <section style="margin-top:2rem">
@@ -126,5 +168,15 @@
       <p>Made by Eyad Eltaher — use responsibly for learning and security practice.</p>
     </footer>
   </main>
+
+
+  <script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('touchstart', () => card.classList.add('touch-hover'));
+      ['touchend', 'touchcancel'].forEach(evt =>
+        card.addEventListener(evt, () => card.classList.remove('touch-hover'))
+      );
+    });
+  </script>
 </body>
 </html>
