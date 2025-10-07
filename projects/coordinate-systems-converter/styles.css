@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    color: #e0e0e0;
+    background: radial-gradient(circle at 50% 50%, #11131a, #0a0b10 80%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* === Animated scientific background === */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: repeating-radial-gradient(
+        circle at center,
+        rgba(0, 255, 255, 0.05) 0,
+        rgba(0, 255, 255, 0.05) 2px,
+        transparent 3px,
+        transparent 100px
+    );
+    animation: drift 60s linear infinite;
+    transform: translate(-25%, -25%) scale(1.5);
+    z-index: 0;
+}
+
+@keyframes drift {
+    from { transform: translate(-25%, -25%) rotate(0deg) scale(1.5); }
+    to { transform: translate(-25%, -25%) rotate(360deg) scale(1.5); }
+}
+
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    z-index: 1;
+    text-shadow: 0 0 15px cyan;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(20, 25, 35, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+    z-index: 1;
+    width: 320px;
+}
+
+
+label {
+    margin: 0 5px;
+}
+
+.selectSys {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid cyan;
+    background: #121820;
+    color: cyan;
+    outline: none;
+    font-family: inherit;
+    transition: 0.2s;
+}
+
+.selectSys:hover {
+    box-shadow: 0 0 10px cyan;
+}
+
+
+#inputBox, #outputBox {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid cyan;
+    background: #0f1520;
+    color: #00ffff;
+    outline: none;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+#inputBox:focus {
+    box-shadow: 0 0 12px cyan;
+}
+
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, cyan, #00ffaa);
+    color: #0a0a0a;
+    font-weight: bold;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #00ffaa, cyan);
+    box-shadow: 0 0 20px cyan;
+    transform: scale(1.05);
+}
+
+form::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(0,255,255,0.1) 90deg,
+        transparent 180deg
+    );
+    animation: rotateGlow 20s linear infinite;
+    z-index: -1;
+    filter: blur(100px);
+}
+
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+#equations-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, #0b0f16 0%, #07090f 100%);
+}
+
+.eq {
+  position: absolute;
+  color: rgba(0,255,255,0.12);
+  font-family: 'Roboto Mono', monospace;
+  font-size: calc(18px + 1vw);
+  white-space: nowrap;
+  animation: floatEq 30s linear infinite;
+}
+
+@keyframes floatEq {
+  from { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { transform: translateY(-10vh) rotate(180deg); opacity: 0.7; }
+  to   { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+
+.eq:nth-child(1){ left:5%;  animation-delay:0s; }
+.eq:nth-child(2){ left:20%; animation-delay:5s; }
+.eq:nth-child(3){ left:40%; animation-delay:8s; }
+.eq:nth-child(4){ left:60%; animation-delay:12s; }
+.eq:nth-child(5){ left:75%; animation-delay:17s; }
+.eq:nth-child(6){ left:85%; animation-delay:21s; }
+.eq:nth-child(7){ left:50%; animation-delay:28s; }
+

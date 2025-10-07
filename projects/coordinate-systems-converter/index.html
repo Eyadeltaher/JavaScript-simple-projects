@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coordinate systems converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="equations-bg">
+        <span class="eq">E = mc²</span>
+        <span class="eq">∫ F·dr</span>
+        <span class="eq">ΔV = IR</span>
+        <span class="eq">sin θ = y / r</span>
+        <span class="eq">∇·E = ρ / ε₀</span>
+        <span class="eq">λ = h / p</span>
+        <span class="eq">F = ma</span>
+    </div>
+
+    <div class="container"></div>
+    <h1>coordinate systems converter</h1>
+    <form action="">
+        <label for="systems">Convert from</label>
+        <select class="selectSys" id="fromSelect" name="systems">
+            <option value="cartesian">cartesian</option>
+            <option value="cylindrical">cylindrical</option>
+            <option value="spherical">spherical</option>
+        </select>
+        <label for="systems">to</label>
+        <select class="selectSys" id="toSelect" name="systems">
+            <option value="cartesian">cartesian</option>
+            <option value="cylindrical">cylindrical</option>
+            <option value="spherical">spherical</option>
+        </select> <br>
+        <input type="text" id="inputBox" placeholder="Enter point">
+        <button type="button" onclick="convert()">CONVERT</button>
+        <input type="text" id="outputBox" readonly>
+    </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
